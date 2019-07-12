@@ -1,5 +1,5 @@
 <template>
-  <v-switch
+  <v-checkbox
     :label="label"
     box
     @change="changed"
@@ -16,37 +16,20 @@ import { reacterAttach } from "../../mixins";
 export default {
   props: {
     dataKey: { type: String, required: true }, // key on reactiveData
-    labels: {
-      type: Array /* array of two strings: one for 'off' state on for 'on' state */,
-      required: true,
-      default() {
-        return ["off", "on"];
-      },
-    },
+    label: String,
     hint: String,
     colorWhenOn: String,
     onChanged: {
       type: Function,
-      // parameter is an object with following properties
-      //  'dataKey' and 'value'
-      //   type and format of value depends on what provided by ReacTer:
-      //    of boolean, a boolean is returned
-      //    if number, 0 or 1 is returned
-      //    if string of value "true"/"false" either of those two values is returned
-      //    if string of value "1"/"0" either of those two values is returned
       default: function(/* keyValueObject */) {},
     },
-    disabled: {type: Boolean, default: false}
-
+    disabled: { type: Boolean, default: false },
   },
   data: () => ({
     editedValue: undefined,
     externalType: "boolean",
   }),
   computed: {
-    label() {
-      return this.labels[this.editedValue ? 1 : 0];
-    },
     typedValue() {
       const value = this.editedValue;
       switch (this.externalType) {

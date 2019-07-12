@@ -11,6 +11,8 @@
     :hint="hint"
     :append-icon="stepperIcon"
     @click:append="stpperIconClicked"
+    :disabled="disabled"
+
   />
 </template>
 
@@ -46,6 +48,8 @@ export default {
       //  'dataKey' and 'value' (which is a number or a string depending on the provided value type by ReacTer)
       default: function(/* keyValueObject */) {},
     },
+    disabled: {type: Boolean, default: false}
+
   },
   data: () => ({
     editedValue: undefined,

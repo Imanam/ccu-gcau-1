@@ -4,17 +4,17 @@
       <v-flex xs12 md6>
         <v-layout column>
           <v-flex pa-0>
-            <vyw-alarm :title="alarm1.title" :params="alarm1.params"/>
-            <vyw-alarm :title="alarm2.title" :params="alarm2.params"/>
+            <vyw-alarm :title="alarm1.title" :params="alarm1.params" />
+            <vyw-alarm :title="alarm2.title" :params="alarm2.params" />
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12 md6>
         <v-layout>
           <v-flex>
-            <vyw-alarm :title="alarm10.title" :params="alarm10.params"/>
-            <vyw-alarm :title="alarm11.title" :params="alarm11.params"/>
-            <vyw-alarm :title="alarm20.title" :params="alarm20.params" :isCommonAlarm="true"/>
+            <vyw-alarm :title="alarm10.title" :params="alarm10.params" />
+            <vyw-alarm :title="alarm11.title" :params="alarm11.params" />
+            <vyw-alarm :title="alarm20.title" :params="alarm20.params" :isCommonAlarm="true" />
           </v-flex>
         </v-layout>
       </v-flex>

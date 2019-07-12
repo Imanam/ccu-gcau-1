@@ -391,7 +391,7 @@
 	</Objet>
 	<Objet>
 		<Label>Edit_CONTROL</Label>
-		<Donnee><Approver></Donnee>
+		<Donnee>{Approver}</Donnee>
 	</Objet>
 	<Objet>
 		<Label>Edit_CRH_NH</Label>

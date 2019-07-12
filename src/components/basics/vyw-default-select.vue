@@ -6,6 +6,8 @@
     @change="changed"
     :hint="hint"
     v-model="editedValue"
+    :disabled="disabled"
+
   />
 </template>
 
@@ -30,6 +32,8 @@ export default {
       //  'dataKey', 'value', and 'index' (0-based in itemList)
       default: function(/* keyValueObject */) {},
     },
+    disabled: {type: Boolean, default: false}
+
   },
   data: () => ({
     editedValue: undefined,

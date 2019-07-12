@@ -19,7 +19,7 @@
                   type="file"
                   accept=".tdsa, .tdsn"
                   @change="loadTds"
-                >
+                />
               </v-flex>
               <v-flex xs2>
                 <v-btn small @click="saveOutputFile();">Save</v-btn>
@@ -37,33 +37,39 @@
             <v-tab>Admin</v-tab>
             <v-tab>System</v-tab>
             <v-tab>Alarms</v-tab>
+            <v-tab>Battery</v-tab>
           </v-tabs>
         </div>
 
-        <div :class="{hide: !tabBarFixed}">
+        <!-- <div :class="{hide: !tabBarFixed}">
           <v-tabs>
-            <v-tab/>
-            <v-tab/>
-            <v-tab/>
+            <v-tab />
+            <v-tab />
+            <v-tab />
+            <v-tab />
           </v-tabs>
-        </div>
+        </div>-->
 
         <div ref="contentFrame">
           <v-tabs v-model="menuItemSelected" height="0">
-            <v-tab/>
-            <v-tab/>
-            <v-tab/>
+            <v-tab />
+            <v-tab />
+            <v-tab />
+            <v-tab />
             <v-tab-item>
-              <vyw-admin :tdsFileName="tdsFileName" :contentsAltered="contentsAltered"/>
+              <vyw-admin :tdsFileName="tdsFileName" :contentsAltered="contentsAltered" />
             </v-tab-item>
             <v-tab-item>
-              <vyw-system/>
+              <vyw-system />
             </v-tab-item>
             <v-tab-item>
-              <vyw-alarms/>
+              <vyw-alarms />
+            </v-tab-item>
+            <v-tab-item>
+              <vyw-battery />
             </v-tab-item>
           </v-tabs>
-          <vyw-react-test/>
+          <vyw-react-test />
         </div>
       </v-flex>
     </v-layout>
@@ -74,15 +80,19 @@
 import VywAdmin from "./admin";
 import VywSystem from "./system";
 import VywAlarms from "./alarms";
+import VywBattery from "./battery";
 import VywReactTest from "./react-test";
 import { dataKeys, eventBus, processTdsFile, reactiveData } from "../data";
 import { makeUrlTextFile } from "../utils";
+// import { implementValueChanged } from '../mixins';
 
 export default {
   components: {
     VywAdmin,
     VywSystem,
     VywAlarms,
+    VywAdmin,
+    VywBattery,
     VywReactTest,
   },
   data: () => ({
@@ -180,9 +190,9 @@ export default {
   z-index: 1;
 }
 
-.hide {
+/* .hide {
   display: none;
-}
+} */
 
 .headerMargin {
   margin-bottom: 6px;
